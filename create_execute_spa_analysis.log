@@ -1,0 +1,71 @@
+aries1 / SYS>set echo on
+aries1 / SYS>set timing on
+aries1 / SYS>
+aries1 / SYS>/*
+aries1 / SYS>DBMS_SQLPA.CREATE_ANALYSIS_TASK(
+aries1 / SYS>  sqlset_name	 IN VARCHAR2,
+aries1 / SYS>  basic_filter	 IN VARCHAR2 :=  NULL,
+aries1 / SYS>  con_name 	 IN VARCHAR2	 DEFAULT,
+aries1 / SYS>  order_by 	 IN VARCHAR2 :=  NULL,
+aries1 / SYS>  top_sql		 IN VARCHAR2 :=  NULL,
+aries1 / SYS>  task_name	 IN VARCHAR2 :=  NULL,
+aries1 / SYS>  description	 IN VARCHAR2 :=  NULL
+aries1 / SYS>  sqlset_owner	 IN VARCHAR2 :=  NULL)
+aries1 / SYS>RETURN VARCHAR2;
+aries1 / SYS>*/
+aries1 / SYS>
+aries1 / SYS>exec dbms_sqlpa.create_analysis_task(sqlset_name  => 'dba_spa_sts', -
+> 				       basic_filter => NULL, -
+> 				       con_name     => NULL, -
+> 				       order_by     => NULL, -
+> 				       top_sql	    => NULL, -
+> 				       task_name    => 'my_spa_task_20211012', -
+> 				       description  => 'test index changes', -
+> 				       sqlset_owner => 'AVDBA' -
+> 				      );
+BEGIN dbms_sqlpa.create_analysis_task(sqlset_name  => 'dba_spa_sts',                                       basic_filter => NULL,                                       con_name     => NULL,                                       order_by     => NULL,                                       top_sql      => NULL,                                       task_name    => 'my_spa_task_20211012',                                       description  => 'test index changes',                                       sqlset_owner => 'AVDBA'                                      ); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00306: wrong number or types of arguments in call to 'CREATE_ANALYSIS_TASK' 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+Elapsed: 00:00:00.01
+aries1 / SYS>
+aries1 / SYS>
+aries1 / SYS>/*
+aries1 / SYS>DBMS_SQLPA.EXECUTE_ANALYSIS_TASK(
+aries1 / SYS>	task_name	  IN VARCHAR2,
+aries1 / SYS>	execution_type	  IN VARCHAR2		    := 'test execute',
+aries1 / SYS>	execution_name	  IN VARCHAR2		    := NULL,
+aries1 / SYS>	execution_params  IN dbms_advisor.argList   := NULL,
+aries1 / SYS>	execution_desc	  IN VARCHAR2		    := NULL)
+aries1 / SYS> RETURN VARCHAR2;
+aries1 / SYS>*/
+aries1 / SYS>
+aries1 / SYS>exec dbms_sqlpa.execute_analysis_task(task_name => 'my_spa_task_20211012', -
+> 					execution_type => 'test execute', -
+> 					execution_name => 'before_change' -
+> 				       );
+BEGIN dbms_sqlpa.execute_analysis_task(task_name => 'my_spa_task_20211012',                                        execution_type => 'test execute',                                        execution_name => 'before_change'                                       ); END;
+
+*
+ERROR at line 1:
+ORA-13605: The specified task or object my_spa_task_20211012 does not exist for 
+the current user. 
+ORA-06512: at "SYS.PRVT_ADVISOR", line 3389 
+ORA-06512: at "SYS.DBMS_SYS_ERROR", line 86 
+ORA-06512: at "SYS.PRVT_ADVISOR", line 7126 
+ORA-06512: at "SYS.PRVT_ADVISOR", line 3052 
+ORA-06512: at "SYS.DBMS_ADVISOR", line 262 
+ORA-06512: at "SYS.DBMS_SQLPA", line 437 
+ORA-06512: at "SYS.DBMS_SQLPA", line 454 
+ORA-06512: at line 1 
+
+
+Elapsed: 00:00:00.01
+aries1 / SYS>
+aries1 / SYS>spool off

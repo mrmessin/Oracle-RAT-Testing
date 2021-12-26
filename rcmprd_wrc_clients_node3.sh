@@ -1,0 +1,17 @@
+export replay_directory=
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
+wrc avdba/avdba#2ALL@ag3rcmprd3 replaydir=${replay_directory} &
